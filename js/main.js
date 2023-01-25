@@ -26,7 +26,7 @@ const Button = document.querySelector("#button");
 
 // DEFINIRE costo biglietto di 0.21 $ per km:
 const costXkm = 0.21;
-const costTicket = parseInt(costXkm * userKm);
+// const costTicket = parseInt(costXkm * userKm);
 
 
 Button.addEventListener(
@@ -38,17 +38,17 @@ Button.addEventListener(
         // per determinare sconto eventuale al biglietto
         if (userAge.value < 18) {
             // SE utente minore sconto del 20%
-            price.innerHTML = (((costXkm * userKm.value) * 20 / 100).toFixed(2) + " euro");
+            price.innerHTML = parseInt(((costXkm * userKm.value) * 20 / 100).toFixed(2) + " euro");
             console.log("passeggiero minore: " + price.innerHTML);
         }
         // ALTRIMENTI SE over 65 sconto del 40%
         else if (userAge.value >= 65) {
-            price.innerHTML = (((costXkm * userKm.value) * 40 / 100).toFixed(2) + " euro");
+            price.innerHTML = parseInt(((costXkm * userKm.value) * 40 / 100).toFixed(2) + " euro");
             console.log("passeggiero over65: " + price.innerHTML);
         }
         // ALTRIMENTI prezzo pieno
         else {
-            price.innerHTML = ((costXkm * userKm.value).toFixed(2) + " euro");
+            price.innerHTML = parseInt((costXkm * userKm.value).toFixed(2) + " euro");
             console.log("prezzo pieno " + price.innerHTML);
         }
     }
